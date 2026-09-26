@@ -1,0 +1,19 @@
+on:
+   push:
+      branches:["main"]
+   pull_req:
+      branches:["main"]
+jobs:
+	 build:
+		 runs-on:ubuntu-latest
+		 steps:
+			 -name: Checkout source code
+			  uses:actions/Checkout@v4
+			 -name: Set up 3DK
+			  uses:actions/setup-java@v4
+			  with:
+				  java-version:'17'
+				  distribution:'themurin'
+				  cache:maven
+				
+		
